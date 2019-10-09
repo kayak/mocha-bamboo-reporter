@@ -1,3 +1,27 @@
+
+This is customized update used by QTE for mocha-bamboo-reporter. When making updates, be sure not to conflict with official version numbers, add a patch version number k.1
+
+ eg: 1.1.2 < 1.1.3-k.1 < 1.1.3
+
+
+1. update version number in package.json
+2. npm login
+
+   `npm login --registry=https://artifacts02.ci.runwaynine.com/repository/kayak-npm/`
+
+3. npm publish 
+
+   `npm publish --registry=https://artifacts02.ci.runwaynine.com/repository/kayak-npm/`
+
+4. install latest version number in both clients via command line
+   
+   `npm i mocha-bamboo.reporter@x.x.xx --registry=https://artifacts.runwaynine.com/repository/npm`
+
+   or update version in package.json
+
+   `"mocha-bamboo-reporter": "^x.x.x"`
+   
+      
 mocha-bamboo-reporter
 =====================
 
@@ -43,3 +67,8 @@ To run your Mocha tests without modifying your package.json you can simply do th
 * Add a "Node.js" task with script `node_modules/mocha/bin/mocha` and arguments `--reporter mocha-bamboo-reporter`, along with any other arguments you want to pass to Mocha
 * To overwrite default output to mocha.json in current directory, add option `--reporter-options output=/path/to/output.json`
 * You'll still need to run a "Parse mocha results" task, and ensure you don't use an old mocha.json
+
+
+
+
+
